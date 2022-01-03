@@ -1,15 +1,10 @@
+body {
+  display: flex;
+}
+
 .box {
-  background-color: blue;
-  width: 300px;
-  height: 300px;
-  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: peru;
   color: white;
-}
-
-.box:nth-child(2) {
-  margin-left: 50px;
-}
-
-.box:nth-child(3) {
-  margin-left: 20px;
 }
