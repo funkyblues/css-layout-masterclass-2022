@@ -1,20 +1,11 @@
 .father {
   display: flex;
-  /* flex-direction: column이 되면? */
-  /* 이제 flex-basis는 height가 된다. (main axis가 vertical이 되므로)*/
-  /* app에서 element(flex item)의 크기를 정할 떄  */
-  /* flex-direction: column; */
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .child {
-  /* flex-basis가 width와 같다고 할 수 있다. */
-  /* 그러나 그렇지 않다. flex-basis는 element에게 처음 크기를 주는 것임. */
-  /* 모든게 찌그러지거나 늘어나기 전에. */
-  flex-basis: 300px;
+  flex-basis: 30%;
   background-color: peru;
   color: white;
   font-size: 50px;
@@ -23,10 +14,10 @@
   align-items: center;
 }
 
-/* 거의 width와 같지만 flex-basis는 오직 width만 있는게 아님 */
-/* flex-basis는 main axis에서 작용하므로 (현재 flex-direction: row) */
+.child:nth-child(4) {
+  margin-top: 10px;
+}
 
-.child:nth-child(2) {
-  background-color: #000;
-  flex-grow: 0;
+/* 새로운 걸 추가하려고 하면... 문제가 생긴다 이렇게. */
+.child:nth-child(5) {
 }
