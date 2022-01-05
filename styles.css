@@ -1,16 +1,34 @@
-.wrapper {
+.father {
   display: flex;
-  flex-direction: column;
-  /* Main Axis */
   justify-content: space-around;
-  /* Cross Axis */
-  /* align-items: center; */
-  align-items: stretch;
+
   height: 100vh;
 }
 
-.box {
+.child {
+  width: 200px;
   height: 200px;
   background-color: peru;
   color: white;
+  font-size: 18px;
+}
+
+/* align-self를 위해선 부모의 높이가 반드시 필요 */
+/* 오직 cross axis에서 적용된다.*/
+/* flex-direction을 바꾸어서 수평, 수직에 적용 할 수 있다는 이야기*/
+/* .child:nth-child(2) {
+  align-self: center;
+}
+
+.child:nth-child(3) {
+  align-self: flex-end;
+} */
+
+.child:nth-child(1) {
+  order: 2; /*order*/
+  align-self: center; /*align-self*/
+}
+
+.child:nth-child(2) {
+  order: 3; /*기본적으로 box의 order는 0*/
 }
