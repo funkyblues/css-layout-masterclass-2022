@@ -1,20 +1,32 @@
-.father {
-  /* display: grid;를 하면 바로 depth가 생겼다. */
+.grid {
   display: grid;
-  grid-template-columns: 250px 250px 250px;
-  grid-template-rows: 100px 50px 300px;
-  /* 사이 간격을 주면 어떻게 될까 */
-  /* column-gap: 10px;
-  row-gap: 10px; */
-  gap: 10px;
+  grid-template-columns: auto 200px 100px;
+  grid-template-rows: 100px repeat(2, 200px) 100px;
+  grid-template-areas: 
+  "header header header header"
+  "content content . nav"
+  "content content . nav"
+  "footer footer footer footer";
+  /* 1. 같은 영역은 서로 이어져 있어야 되네요.
+2. 이어져 있더라도 그 집합 영역이 'ㄱ'자나 'ㄴ'자 모양이면 안되고 직사각형이나 정사각형일 때만 display 해주더군요. */
 }
 
-.child {
-  flex-basis: 30%;
-  background-color: peru;
-  color: white;
-  font-size: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header {
+  background-color: #2ecc71;
+  grid-area: header;
+}
+
+.content {
+  background-color: #3498db;
+  grid-area: content;
+}
+
+.nav {
+  background-color: #8e44ad;
+  grid-area: nav;
+}
+
+.footer {
+  background-color: #f39c12;
+  grid-area: footer;
 }
