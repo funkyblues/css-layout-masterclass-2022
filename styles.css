@@ -6,6 +6,18 @@ body {
   color: white;
   display: grid;
   gap: 5px;
+  /* max-content: content의 내용 최대로 */
+  /* min-content: content의 내용 최소로 */
+  /* grid-template-columns: max-content min-content; */
+  /* 최소값: max-content */
+  /* 최대값: 1fr */
+
+  /* grid-template-columns: repeat(5, minmax(max-content, 1fr)); */
+
+  /* 아래와 같이 쓰기도 한다. */
+  /* grid-template-columns: repeat(auto-fill, minmax(20px, max-content)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(50px, max-content)); */
+
   grid-auto-rows: 100px;
   margin-bottom: 30px;
 }
@@ -16,17 +28,4 @@ body {
 
 .item:nth-child(even) {
   background-color: #3498db;
-}
-
-/* 특정 숫자를 적어주기 보단(모르니까) auto-fill을 적음 
-auto-fill은 column을 만들어주는 일을 할 것임(주어진 영역 안에서 가능한 한 많이)*/
-
-/* auto-fill: 정확한 사이즈를 위함 (사이즈 exact)*/
-.grid:nth-child(1) {
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-}
-
-/* auto-fit: 좀 더 유동적인 사이즈를 위함. (사이즈 grow)*/
-.grid:nth-child(2) {
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
