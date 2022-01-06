@@ -3,22 +3,34 @@ body {
 }
 
 .grid {
+  color:white;
+  /* grid container의 크기는 width: 100% */
+  background-color: grey;
   display: grid;
   gap: 10px;
-  height: 50vh;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  /* justify-items의 default는 stretch임. */
-  /* grid 내의 자식들을 늘여서 본인을 채우게 함. */
-  /* justify-items: stretch; */
-  
-  /* item들은 늘어나지 않음! (시작 위치: start, center, end) */
-  /* justify-items: center; */
-  /* align-items도 같은 개념이다. vertical로. */
+  height: 250vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  /* grid-template-rows: repeat(4, 1fr); */
+  /* item은 셀 중의 하나. */
+  /* content는 전체 grid. */
 
-  /* justify-items와 align-items를 같이 쓰는 지름길이 있음 */
-  /* place-items: y x (처음이 y, 나중이 x) align 후에 justify*/
-  place-items: end end;
+  /* 기본값 start */
+  /* justify-content : 모든 grid를 horizontal하게 옮기는 것 */
+  /* justify-content: start; */
+  /* grid element가 아닌, grid를 가운데로 움직이는 것. */
+  /* justify-content: space-evenly; */
+  /* justify-content: space-between; */
+
+  /* align-content:  모든 grid를 vertical하게 옮기는 것*/
+  /* align-content: space-between; */
+  /* align-content: start; */
+  /* align-content: end; */
+
+  /* place-content 도 있음. */
+  /* vertical 먼저, horizontal 나중 */
+  place-content: end center;
+
 }
 
 .header {
