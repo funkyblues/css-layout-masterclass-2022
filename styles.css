@@ -11,25 +11,37 @@
   /* 녹색을 다른 것들보다 4배 정도 크게 만들겠다. */
   /* grid-template-columns: 4fr 1fr 1fr 1fr; */
   
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
 
   /* 수직으로는 높이가 없어서 화면에 나타나지 않는다.*/
   /* 그래서 여기선 1fr은 0 */
-  grid-template-rows: repeat(4, 1fr);
+  /* grid-template-rows: repeat(4, 1fr);*/
+  grid-template:  
+  /* template에 이름기입 가능. */
+  /* 양쪽 다 쓰거나, 한쪽만 쓰거나 가능. */
+  "header header header header" 1fr /*여기서는 row의 높이를 구체적으로 결정해야 한다.*/
+  "content content content nav" 2fr 
+  "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr /* 여기엔 각 column마다 width가 얼마나 되는지 기입.*/
+  /* repeat은 grid-template에선 작동 X */
+
 }
 
 .header {
   background-color: #2ecc71;
+  grid-area: header;
 }
 
 .content {
   background-color: #3498db;
+  grid-area: content;
 }
 
 .nav {
   background-color: #8e44ad;
+  grid-area: nav;
 }
 
 .footer {
   background-color: #f39c12;
+  grid-area: footer;
 }
