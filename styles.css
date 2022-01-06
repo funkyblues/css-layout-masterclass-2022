@@ -7,37 +7,28 @@
 
 .header {
   background-color: #2ecc71;
-  /* 이렇게 해도  안바뀜... */
-  /* 이건 줄(line)을 이야기 하는거임 */
-  /* 첫 번째 줄에서 두 번째 줄로 */
-  /* grid-column-start: 1;
-  grid-column-end: 2; */
-
-  /* 첫 번째 줄에서 세 번째 줄로 */
-  /* grid-column-start: 1;
-  grid-column-end: 3; */
-
-  grid-column-start: 1;
-  grid-column-end: 5;
+  /* grid-column: 1 / 5; */
+  /* grid-column: 1 / -1; */
+  grid-column: span 4;
 
 }
 
 .content {
   background-color: #3498db;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-column: 1 / -2;
+  /* grid-row: 2 / -2; */
+  grid-row: span 2;
 }
 
 .nav {
   background-color: #8e44ad;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  /* grid-row: 2 / -2; */
+  grid-row : span 2;
 }
 
 .footer {
   background-color: #f39c12;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  /* grid-column: 1 / 5; */
+  /* grid-column: 1 / -1; */
+  grid-column: span 4;
 }
