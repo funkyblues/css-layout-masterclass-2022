@@ -4,47 +4,50 @@ body {
 
 .grid {
   color:white;
-  /* grid container의 크기는 width: 100% */
-  background-color: grey;
   display: grid;
   gap: 10px;
-  height: 250vh;
+  height: 50vh;
   grid-template-columns: repeat(4, 100px);
+  /* row가 충분치 않음. 추가적인 행이 잘려버림... */
   grid-template-rows: repeat(4, 100px);
-  /* grid-template-rows: repeat(4, 1fr); */
-  /* item은 셀 중의 하나. */
-  /* content는 전체 grid. */
+  /* 만약 추가적인 content가 있다면, 자동으로 default를 주어 rows를 할당*/
+  /* 추가적으로 생성되는 rows는 정한 px값으로 생성하겠다는 뜻 */
+  /* grid-auto-rows: 100px; */
 
-  /* 기본값 start */
-  /* justify-content : 모든 grid를 horizontal하게 옮기는 것 */
-  /* justify-content: start; */
-  /* grid element가 아닌, grid를 가운데로 움직이는 것. */
-  /* justify-content: space-evenly; */
-  /* justify-content: space-between; */
 
-  /* align-content:  모든 grid를 vertical하게 옮기는 것*/
-  /* align-content: space-between; */
-  /* align-content: start; */
-  /* align-content: end; */
+  /* row의 수 보다 더 많은 div가 있을 떄, 더 많은 column을 만들어 내는 것. */
+  /* 이렇게 하면, 순서가 column으로 바뀜! */
+  grid-auto-flow: column;
 
-  /* place-content 도 있음. */
-  /* vertical 먼저, horizontal 나중 */
-  place-content: end center;
-
+  /* flow가 column이고, 한번 설정해놓은 것 보다 더 많은 element를 가지면,  
+  grid-auto-columns를 사용한다. */
+  grid-auto-columns: 100px;
 }
 
-.header {
+/* .header {
+  background-color: #2ecc71; */
+  /* align-self: end;
+  justify-self: center; */
+  /* 아래와 같이 쓸 수도 있다. */
+  /* place-self: end center; */
+/* } */
+
+.item:nth-child(odd) {
   background-color: #2ecc71;
 }
 
-.content {
+.item:nth-child(even) {
   background-color: #3498db;
 }
 
+/* .content {
+  background-color: #3498db;
+} */
+/* 
 .nav {
   background-color: #8e44ad;
 }
 
 .footer {
   background-color: #f39c12;
-}
+} */
