@@ -1,7 +1,12 @@
 .father {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* display: grid;를 하면 바로 depth가 생겼다. */
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 100px 50px 300px;
+  /* 사이 간격을 주면 어떻게 될까 */
+  /* column-gap: 10px;
+  row-gap: 10px; */
+  gap: 10px;
 }
 
 .child {
@@ -12,12 +17,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.child:nth-child(4) {
-  margin-top: 10px;
-}
-
-/* 새로운 걸 추가하려고 하면... 문제가 생긴다 이렇게. */
-.child:nth-child(5) {
 }
