@@ -7,19 +7,8 @@ body {
   display: grid;
   gap: 5px;
   height: 50vh;
-  /* grid-template-columns: repeat(4, 100px); */
-
-  /* 1fr이므로, 화면 크기에 따라 줄어들텐데, 넘 많이 안줄었으면 할 때, 
-  minmax! */
-  /* grid-template-columns: repeat(10, 1fr); */
-  /* min: 100px, max: 1fr */
-  /* 줄이면 페이지 스크롤이 보임. item이 최소 100px이니까! */
-  /* 그 이상이 되면, fr기능이 적용된다. */
-  /* grid-template-columns: repeat(10, minmax(100px, 1fr)); */
-  
-  /* 아니면 그냥 px 써줘도 된당. */
-  grid-template-columns: repeat(10, minmax(100px, 150px));
-  grid-template-rows: repeat(4, 100px);
+  grid-auto-rows: 100px;
+  margin-bottom: 30px;
 }
 
 .item:nth-child(odd) {
@@ -28,4 +17,12 @@ body {
 
 .item:nth-child(even) {
   background-color: #3498db;
+}
+
+.grid:first-child {
+  grid-template-columns: repeat(5, minmax(100px, 150px));
+}
+
+.grid:last-child {
+  grid-template-columns: repeat(5, minmax(100px, 150px));
 }
