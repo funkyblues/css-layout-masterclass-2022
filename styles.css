@@ -1,47 +1,38 @@
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 .grid {
   display: grid;
   gap: 10px;
   height: 50vh;
-  /* fraction: grid에서 사용가능한 공간 */
-  /* 1fr을 4번 반복. */
-  /* width: 500px로 주면, 1fr은 거기서 4를 나눠서 가져가게됨. */
-  /* fraction은 grid container에서 얻는 것임. */
-  /* grid-template-columns: repeat(4, 1fr); */
-
-  /* 녹색을 다른 것들보다 4배 정도 크게 만들겠다. */
-  /* grid-template-columns: 4fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* justify-items의 default는 stretch임. */
+  /* grid 내의 자식들을 늘여서 본인을 채우게 함. */
+  /* justify-items: stretch; */
   
-  /* grid-template-columns: repeat(4, 1fr); */
+  /* item들은 늘어나지 않음! (시작 위치: start, center, end) */
+  /* justify-items: center; */
+  /* align-items도 같은 개념이다. vertical로. */
 
-  /* 수직으로는 높이가 없어서 화면에 나타나지 않는다.*/
-  /* 그래서 여기선 1fr은 0 */
-  /* grid-template-rows: repeat(4, 1fr);*/
-  grid-template:  
-  /* template에 이름기입 가능. */
-  /* 양쪽 다 쓰거나, 한쪽만 쓰거나 가능. */
-  "header header header header" 1fr /*여기서는 row의 높이를 구체적으로 결정해야 한다.*/
-  "content content content nav" 2fr 
-  "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr /* 여기엔 각 column마다 width가 얼마나 되는지 기입.*/
-  /* repeat은 grid-template에선 작동 X */
-
+  /* justify-items와 align-items를 같이 쓰는 지름길이 있음 */
+  /* place-items: y x (처음이 y, 나중이 x) align 후에 justify*/
+  place-items: end end;
 }
 
 .header {
   background-color: #2ecc71;
-  grid-area: header;
 }
 
 .content {
   background-color: #3498db;
-  grid-area: content;
 }
 
 .nav {
   background-color: #8e44ad;
-  grid-area: nav;
 }
 
 .footer {
   background-color: #f39c12;
-  grid-area: footer;
 }
