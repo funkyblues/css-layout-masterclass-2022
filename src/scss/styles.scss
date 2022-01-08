@@ -1,6 +1,39 @@
-body {
-  background: peru;
-  a {
+//  Variables
+@import "_variables";
+
+h2 {
+  color: $bg;
+}
+
+// .box {
+//   margin-top: 20px;
+// }
+
+// .box h2 {
+//   color: blue;
+// }
+
+// .box button {
+//   color: red;
+// }
+
+// .box:hover{
+//   background-color: green;
+// }
+
+// 이렇게 적기보다, Nesting을 활용하면 더 좋음
+.box {
+  margin-top: 20px;
+  &:hover {
+    background-color: green;
+  }
+  h2 {
     color: blue;
+    &:hover {
+      color: red;
+    }
+  }
+  button {
+    color: red;
   }
 }
