@@ -1,13 +1,23 @@
-@import "_buttons";
+// 크롬 읽기 목록에 scss 라이브러리 링크 있음! animate.css 나 bourbon 등등 사용하면 좋을거 같음
 
-a {
-  @extend %button;
-  // 추가적으로 작성 가능!
-  text-decoration: none;
-}
+@import "_mixins";
 
-button {
-  @extend %button;
-  // 추가적으로 작성 가능!
-  border: none;
+// _mixins에서의 responsive의 내용도 포함해서 스타일이 적용 된다.
+// a {
+//   @include responsive {
+//     text-decoration: none;
+//   }
+// }
+
+h1 {
+  color: red;
+  @include responsive("iphone") {
+    color: yellow;
+  }
+  @include responsive("iphone-l") {
+    font-size: 60px;
+  }
+  @include responsive("tablet") {
+    color: green;
+  }
 }
