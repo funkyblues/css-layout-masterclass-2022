@@ -1,0 +1,23 @@
+// @mixin sexyTitle {
+//   color: blue;
+//   font-size: 30px;
+//   margin-bottom: 12px;
+// }
+
+// @mixin link($color) {
+//   text-decoration: none;
+//   display: block;
+//   color: $color;
+// }
+
+// 이렇게도 할 수 있따.
+
+@mixin link($word) {
+  text-decoration: none;
+  display: block;
+  @if $word == "odd" {
+    color: blue;
+  } @else {
+    color: red;
+  }
+}

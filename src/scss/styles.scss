@@ -1,39 +1,29 @@
 //  Variables
 @import "_variables";
+@import "_mixins";
 
-h2 {
-  color: $bg;
-}
-
-// .box {
-//   margin-top: 20px;
+// h1 {
+//   @include sexyTitle();
 // }
 
-// .box h2 {
-//   color: blue;
+// a {
+//   margin-bottom: 10px;
+//   &:nth-child(odd) {
+//     @include link(blue);
+//   }
+
+//   &:nth-child(even) {
+//     @include link(red);
+//   }
 // }
 
-// .box button {
-//   color: red;
-// }
-
-// .box:hover{
-//   background-color: green;
-// }
-
-// 이렇게 적기보다, Nesting을 활용하면 더 좋음
-.box {
-  margin-top: 20px;
-  &:hover {
-    background-color: green;
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
   }
-  h2 {
-    color: blue;
-    &:hover {
-      color: red;
-    }
-  }
-  button {
-    color: red;
+
+  &:nth-child(even) {
+    @include link("even");
   }
 }
