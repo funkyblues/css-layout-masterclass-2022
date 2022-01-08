@@ -1,29 +1,13 @@
-//  Variables
-@import "_variables";
-@import "_mixins";
-
-// h1 {
-//   @include sexyTitle();
-// }
-
-// a {
-//   margin-bottom: 10px;
-//   &:nth-child(odd) {
-//     @include link(blue);
-//   }
-
-//   &:nth-child(even) {
-//     @include link(red);
-//   }
-// }
+@import "_buttons";
 
 a {
-  margin-bottom: 10px;
-  &:nth-child(odd) {
-    @include link("odd");
-  }
+  @extend %button;
+  // 추가적으로 작성 가능!
+  text-decoration: none;
+}
 
-  &:nth-child(even) {
-    @include link("even");
-  }
+button {
+  @extend %button;
+  // 추가적으로 작성 가능!
+  border: none;
 }
