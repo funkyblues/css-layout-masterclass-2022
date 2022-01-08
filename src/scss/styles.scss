@@ -1,23 +1,40 @@
-// 크롬 읽기 목록에 scss 라이브러리 링크 있음! animate.css 나 bourbon 등등 사용하면 좋을거 같음
+@import "reset";
+@import "_variables";
 
-@import "_mixins";
+* {
+  box-sizing: border-box;
+}
 
-// _mixins에서의 responsive의 내용도 포함해서 스타일이 적용 된다.
-// a {
-//   @include responsive {
-//     text-decoration: none;
-//   }
-// }
+body {
+  height: 100vh;
+}
 
-h1 {
-  color: red;
-  @include responsive("iphone") {
-    color: yellow;
+header {
+  background-color: $white;
+  width: 33%;
+  height: 100%;
+  padding: 10vh 0 0 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $red;
+  h1 {
+    font-size: 85px;
+    width: 50%;
   }
-  @include responsive("iphone-l") {
-    font-size: 60px;
+  h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
   }
-  @include responsive("tablet") {
-    color: green;
+  h3,
+  p {
+    width: 80%;
+    text-align: justify;
+  }
+  p {
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 40px;
   }
 }
